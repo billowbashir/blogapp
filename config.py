@@ -5,7 +5,7 @@ class Config:
     '''
     class config
     '''
-
+    SECRET_KEY='1234'
 
 class ProdConfig(Config):
     '''
