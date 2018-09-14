@@ -6,6 +6,7 @@ class Config:
     class config
     '''
     SECRET_KEY='1234'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://bashir:bashiir@localhost/blogs'
 
 class ProdConfig(Config):
     '''
