@@ -27,7 +27,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://bashir:bashiir@localhost/blogger'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://bashir:bashiir@localhost/blog'
     SECRET_KEY=os.environ.get("SECRET_KEY")
     DEBUG = True
 
