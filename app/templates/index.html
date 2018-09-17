@@ -8,7 +8,7 @@
   {%for blog in blogs%}
 
   <div class="col-md-4 jumbotron">
-  <h1 class="title">{{blog.title}}</hi>
+  <h1 class="title">{{blog.title}}</h1>
     <p>{{blog.blog}}</p>
     <button><a href="{{url_for('main.comment')}}">comment</a></button><button><i class="fa fa-thumbs-up"></i></button><button><i class="fa fa-thumbs-down"></i></button>
     </div>
