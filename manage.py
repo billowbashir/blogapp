@@ -9,6 +9,7 @@ from app.models import User
 
 
 app=create_app('production')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 migrate = Migrate(app,db)
 manager=Manager(app)
 manager.add_command('server',Server)
