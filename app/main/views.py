@@ -15,7 +15,7 @@ def index():
 def blog():
     blog_form=BlogForm()
     if blog_form.validate_on_submit():
-        blog=Blog(title=blog_form.title.data,blog=blog_form.blog.data,user_id=current_user.id.username)
+        blog=Blog(title=blog_form.title.data,blog=blog_form.blog.data)
         db.session.add(blog)
         db.session.commit()
         return redirect(url_for('main.index'))

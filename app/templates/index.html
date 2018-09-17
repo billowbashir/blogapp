@@ -3,9 +3,14 @@
 {%block content%}
 <body class='body'>
   {%for blog in blogs%}
-  <h1>{{blog.title}}</hi>
+  <div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6 blog">
+  <h1 class="title">{{blog.title}}</hi>
     <p>{{blog.blog}}</p>
-    
+    </div>
+    <div class="col-md-3"></div>
+  </div>
     {%endfor%}
 
 </body>
@@ -14,6 +19,14 @@
   background-image: url('https://png.pngtree.com/thumb_back/fw800/back_pic/03/86/57/8357cfa9a9ab9c4.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+.title{
+  text-align: center;
+}
+.blog{
+  background-color: black;
+  color: white;
+  margin-bottom: 50px;
 }
 </style>
 {%endblock%}
