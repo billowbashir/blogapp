@@ -6,13 +6,13 @@
 {%block content%}
 <body class='body'>
   {%for blog in blogs%}
-<div class="row">
-  <div class="col-md-4 blog">
+
+  <div class="col-md-4 jumbotron">
   <h1 class="title">{{blog.title}}</hi>
     <p>{{blog.blog}}</p>
     <button><a href="{{url_for('main.comment')}}">comment</a></button><button><i class="fa fa-thumbs-up"></i></button><button><i class="fa fa-thumbs-down"></i></button>
     </div>
-</div>
+
     {%endfor%}
 
 </body>
@@ -25,7 +25,7 @@
 .title{
   text-align: center;
 }
-.blog{
+.jumbotron{
   background-color: bisque;
   color: black;
   margin-right: 50px;
