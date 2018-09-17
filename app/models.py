@@ -32,7 +32,7 @@ class User(UserMixin,db.Model):
 class Blog(db.Model):
     __tablename__='blogs'
     id=db.Column(db.Integer,primary_key=True)
-    topic=db.Column(db.String(255))
+    title=db.Column(db.String(255))
     blog=db.Column(db.String(255))
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
 

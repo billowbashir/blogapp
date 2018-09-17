@@ -7,7 +7,7 @@ from ..models import Blog,Comment
 class BlogForm(FlaskForm):
     title=SelectField('title',
         choices=[('sports', 'sports'), ('life style', 'life style'), ('tech', 'tech'), ('funny', 'funny')], validators = [Required()])
-    Blog = TextAreaField('pitblogch',validators=[Required()])
+    blog = TextAreaField('pitblogch',validators=[Required()])
     submit = SubmitField('submit')
 # class CommentForm(FlaskForm):
 #     comment=TextAreaField('comment',validators=[Required()])
