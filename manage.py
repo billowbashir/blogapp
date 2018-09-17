@@ -1,3 +1,4 @@
+
 from app import create_app,db
 from flask_script import Manager,Server
 from  flask_migrate import Migrate, MigrateCommand
@@ -9,7 +10,7 @@ from app.models import User
 
 
 app=create_app('production')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config['DATABASE_URL']='postgresql+psycopg2://bashir:bashiir@localhost/blogger'
 migrate = Migrate(app,db)
 manager=Manager(app)
 manager.add_command('server',Server)
