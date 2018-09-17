@@ -14,6 +14,8 @@ class User(UserMixin,db.Model):
     username = db.Column(db.String(255))
     email = db.Column(db.String(255),unique = True,index = True)
     pass_secure = db.Column(db.String(255))
+    blogs = db.relationship('Blog',backref = 'users',lazy = "dynamic")
+    comment = db.relationship('Comment',backref = 'users',lazy = "dynamic")
     @property
     def password(self):
             raise AttributeError('You cannot read the password attribute')
@@ -32,3 +34,14 @@ class Blog(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     topic=db.Column(db.String(255))
     blog=db.Column(db.String(255))
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+
+
+
+
+class Comment(db.Model):
+    __tablename__='comments'
+    id = db.Column(db.Integer,primary_key = True)
+    comment = db.Column(db.String(255))
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+    blog_id = db.Column(db.Integer,db.ForeignKey("blogs.id"))
