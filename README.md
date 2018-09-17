@@ -11,7 +11,7 @@ To run the application do the following:
 - create a file start.sh and put in the required configurations
 - run the application locally with ./start.sh
 ### Link to live site
-
+https://bashir-blog.herokuapp.com/
 ### likely bugs
 Currently the application has no known bugs but if you come across any issues feel free to contact me from the email address that will be provided below.
 ### technologies used

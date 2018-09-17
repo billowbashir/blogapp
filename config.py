@@ -4,8 +4,8 @@ class Config:
 
     '''
     class config
-    '''
 
+    '''
 
 class ProdConfig(Config):
     '''
