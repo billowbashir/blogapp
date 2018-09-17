@@ -1,4 +1,5 @@
 from flask import render_template, url_for,redirect
+from . forms import BlogForm,CommentForm
 from . import main
 
 
@@ -7,8 +8,8 @@ from . import main
 @main.route('/')
 def index():
     return render_template('index.html')
-@main.route('/pitch',methods=['GET','POST'])
-def pitch():
+@main.route('/logb',methods=['GET','POST'])
+def blog():
     blog_form=BlogForm()
     if blog_form.validate_on_submit():
         blog=Blog(title=blog_form.category.data,blog=blog_form.pitch.data)
