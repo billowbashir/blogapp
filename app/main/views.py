@@ -7,3 +7,12 @@ from . import main
 @main.route('/')
 def index():
     return render_template('index.html')
+@main.route('/pitch',methods=['GET','POST'])
+def pitch():
+    blog_form=BlogForm()
+    if blog_form.validate_on_submit():
+        blog=Blog(title=blog_form.category.data,blog=blog_form.pitch.data)
+        db.session.add(blog)
+        db.session.commit()
+        return redirect(url_for('main.index'))
+    return render_template('pitch.html',blog_form=blog_form)
