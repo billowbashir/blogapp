@@ -10,7 +10,7 @@ from app.models import User
 
 
 app=create_app('production')
-app.config['DATABASE_URL']='postgresql+psycopg2://bashir:bashiir@localhost/blogger'
+app.config['DATABASE_URL']='postgresql+psycopg2://bashir:bashiir@*/blogger'
 migrate = Migrate(app,db)
 manager=Manager(app)
 manager.add_command('server',Server)
