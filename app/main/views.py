@@ -1,5 +1,5 @@
 from flask import render_template, url_for,redirect
-from . forms import BlogForm,CommentForm
+from . forms import BlogForm
 from . import main
 
 
@@ -16,4 +16,4 @@ def blog():
         db.session.add(blog)
         db.session.commit()
         return redirect(url_for('main.index'))
-    return render_template('pitch.html',blog_form=blog_form)
+    return render_template('blog.html',blog_form=blog_form)
