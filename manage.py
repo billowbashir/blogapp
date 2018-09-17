@@ -8,7 +8,7 @@ from app.models import User
 
 
 
-app=create_app('development')
+app=create_app('production')
 migrate = Migrate(app,db)
 manager=Manager(app)
 manager.add_command('server',Server)
