@@ -1,6 +1,6 @@
 from flask import render_template, url_for,redirect
-from . forms import BlogForm
-from ..models import Blog
+from . forms import BlogForm,CommentForm
+from ..models import Blog,Comment
 from . import main
 from .. import db
 
@@ -20,3 +20,16 @@ def blog():
         db.session.commit()
         return redirect(url_for('main.index'))
     return render_template('blog.html',blog_form=blog_form)
+@main.route('/comment',methods=['GET','POST'])
+
+def comment():
+
+    comment_form=CommentForm()
+    if comment_form.validate_on_submit():
+        comment=Comment(comment=comment_form.comment.data)
+        db.session.add(comment)
+        db.session.commit()
+        # return redirect(url_for('main.index'))
+
+    comments=Comment.query.all()
+    return render_template('comment.html',comment_form=comment_form,comments=comments)
